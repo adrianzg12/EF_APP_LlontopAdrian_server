@@ -1,10 +1,7 @@
--- Crear la base de datos
 CREATE DATABASE bdevaluaciondaw
 
--- Usar la base de datos
 USE bdevaluaciondaw
 
--- Crear la tabla usuario
 CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(255) NOT NULL UNIQUE,
