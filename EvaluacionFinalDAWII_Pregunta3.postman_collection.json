@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "99f839f4-c095-47e5-813b-bf104b284b62",
+		"name": "EvaluacionFinalDAWII_Pregunta3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38291930"
+	},
+	"item": [
+		{
+			"name": "GenerarToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "adrian",
+							"type": "text"
+						},
+						{
+							"key": "secret_id",
+							"value": "$2a$12$Gkh4cwCmd4b9US2EHa6/ge.ToFow5kJO7JXQDiVtaDr8CLJxDTj1y",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9092/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8089/api/publico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"publico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJkODM3ZjI1Yi1kZmQyLTRiMzYtYWM4NS1kY2NiOTVlZTJlMWEiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQiLCJhdWQiOiJjbGllbnQiLCJuYmYiOjE3Mjk1NzM1NDEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MiIsImV4cCI6MTcyOTU3NTM0MSwiaWF0IjoxNzI5NTczNTQxLCJqdGkiOiJmNWU4NGFlMy1lODc3LTQ2MjEtODI5My1kZDJkMjdkYjFmY2MifQ.qFJ99BRB2K3-9_py1hJwA6od3kv3eySRW8tFygoUL29T6O5BpBGVvrlWBhKK-lN3ORbCwq41eweeKUIYgX-aPb71rIAtuKoZyeNyjXgTh-gU3x3g8Pb4sbuZQw4gkst1GiOWmsa26bqB6jgY1Vv5GJs0DG_vAnfieDt_ANL4dsM-1HAi-qcsFPzL7zRcWKJr5npU8Ra8ZdqfZ1xWRV5jONQrtDKcOZxAmPIvkGlAyKFKCLxTKshCnCf9ClzHnHrPhyrMXUfW9TgQT8uo_StDnj0IkRZEDN-Dh7jBg5g__uSpXE3R0p5XO_PPJyCmi5I3gewb1qBL96TI4qFMGQbrbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8089/api/privado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"privado"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
